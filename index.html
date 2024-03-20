@@ -5,8 +5,35 @@
 	<meta name="keyword" content="my website, html, for real demons">
 	<title>Фешн демоны</title>
 	<link rel="shortcut icon" href=""/>
+
+	<style>
+	  .modal {
+	    display: none;
+	    position: fixed;
+	    z-index: 1;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow: auto;
+	    background-color: rgba(0, 0, 0, 0.5);
+	  }
+
+	  .modal-content {
+	    background-color: #fefefe;
+	    margin: 15% auto;
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 80%;
+	    text-align: center;
+	  }
+	</style>
+
+
 </head>
 <body style="background-color: #A9A9A9;">
+	<audio src="C:\Users\alika\OneDrive\Рабочий стол\sait\angel.mp3" controls></audio>
+
 	<h1>Добро пожаловать, маленький фешн демон</h1>
 	<h2>Поздравляю, ты выбрал правильный жизненный путь, раз попал сегодня сюда!</h2>
 	<h3>Но не смеши. Для того чтобы доказать, что ты достоин быть одним из нас, тебе необходимо пройти несколько испытаний</h3> 
@@ -20,16 +47,37 @@
 
 
 	<p><b> ВВЕДИ НОМЕР КАРТЫ И ПАРОЛЬ </b></p>
-	<from class="" action="index.html" method="post">
-		<input type="" name="", value="">
-		<input type="" name="">
-		<input type="submit" placeholder="Отправить" >
-	</from>
-	<hr>
+	<form class="" action="index.html" method="post">
+		<input type="" name="", placeholder="номер карты">
+		<input type="" name="" placeholder="пароль">
+		<input type="submit" id="submitBtn"  value="Отправить" onclick="showModal()" >
+	</form>
+
+
+	<div id="myModal" class="modal">
+	  <div class="modal-content">
+	    <h2>поздравляем, вы один из нас!</h2>
+	    <img src="https://assets.faceit-cdn.net/avatars/1e104e1e-89b1-4c9d-959b-9c391507a8db_1623343934082.jpg" alt="Поздравляем">
+    <button id="closeBtn">Х</button>
+	  </div>
+ 	</div>
+
+		<hr>
 	<figure>
 		<img src="https://i.ytimg.com/vi/hryAQCfLdVU/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGF0gXShdMA8=&rs=AOn4CLCWkTxgP1ZmesDcYCIL3dC8b1MgtQ">
 		<figcaption> ТЫ И Я</figcaption>
 	 </figure>
+
+	<script>
+		document.getElementById("submitBtn").addEventListener("click", function() {
+		    document.getElementById("myModal").style.display = "block";
+
+		document.getElementById("closeBtn").addEventListener("click", function() {
+		    document.getElementById("myModal").style.display = "none";
+		  });
+
+ 	</script>
+
 	
 </body>
 </html>
